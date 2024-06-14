@@ -1,0 +1,3 @@
+/workspace/build/CMakeFiles/myos_iso.dir
+/workspace/build/CMakeFiles/edit_cache.dir
+/workspace/build/CMakeFiles/rebuild_cache.dir
