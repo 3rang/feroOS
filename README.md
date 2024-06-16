@@ -1,4 +1,4 @@
-# feroOS (Unified OS Project x86_64 & RISC-V)
+# feroOS (Unified OS Project)
 
 ## Overview
 
@@ -18,7 +18,7 @@
 
 Ensure you have the required toolchains installed:
 
-- **For x86_64**: `gcc`, `nasm`
+- **For x86_64**: `i686`, `nasm`
 - **For RISC-V**: `riscv64-unknown-elf-gcc`
 
 ### Building the Project
@@ -28,32 +28,42 @@ Ensure you have the required toolchains installed:
     git clone https://github.com/3rang/feroOS.git
     cd feroOS
     ```
-
-2. **Build the project**:
+2. **Clone the repository**:
     ```sh
-    make
+     docker build -f Dockerfile -t myos .
     ```
-
-### Running the Binaries
-
-You can use QEMU to run the binaries for both architectures.
-
-- **For x86_64**:
+     ```sh
+    docker run -v $PWD:/workspace --network host --rm -it myos:latest    
+     ```
+     
+3. **Build the project**:
     ```sh
-    qemu-system-x86_64 -drive format=raw,file=x86_64.bin
-    ```
-
-- **For RISC-V**:
-    ```sh
-    qemu-system-riscv64 -machine virt -nographic -bios none -kernel riscv.bin
+    make 
     ```
 
 ## Project Structure
 
 - `boot/`: bootcode
-- `kernel/`: main kernel code
+- `kernel/`: main kernel c code
 - `linker/`: linker files
-- `Makefile`: Build script for automating the compilation process.
+- `Makefile`: Build project.
+- `Dockerfile`: env for building project into docker container.
+- `build`: generated obj, bin files and ISO image 
+
+### Run on QEMU
+
+You can use QEMU to run the binaries for both architectures.
+
+- **For x86_32**:
+    ```sh
+    qemu-system-i386 -cdrom myos.iso
+    ```
+## Architecture Support
+
+| Architecture | Status         | Notes                       |
+|--------------|----------------|-----------------------------|
+| x86          | Working        | Tested |
+| RISC-V       | Under Development | Initial support in progress |
 
 ## License
 
