@@ -24,9 +24,7 @@ RUN apt-get update && \
     wget \
     xz-utils \
     zlib1g-dev \
-    grub-pc-bin \
-    xorriso \
-    qemu-system-*
+    xorriso 
 
 # Define versions
 ENV BINUTILS_VERSION=2.40
