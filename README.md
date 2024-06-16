@@ -58,6 +58,11 @@ You can use QEMU to run the binaries for both architectures.
     ```sh
     qemu-system-i386 -cdrom myos.iso
     ```
+
+![qemu output](/Screenshot/Grub.png)
+
+
+
 ## Architecture Support
 
 | Architecture | Status         | Notes                       |
