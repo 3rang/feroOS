@@ -1,3 +1,8 @@
+
+<div style="text-align:center">
+  <img src="/Screenshot/logo.png" alt="feroOS Logo" width="40%">
+</div>
+
 # feroOS (Unified OS Project)
 
 ## Overview
